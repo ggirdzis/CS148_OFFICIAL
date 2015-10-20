@@ -1,0 +1,15 @@
+
+img {
+    border: 2px solid black;
+    width: 30%;
+}
+body, a[href] {
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+    display: block;
+    margin-top: 1%;
+}
+html {
+    font-family: sans-serif;
+}
