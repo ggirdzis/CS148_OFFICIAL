@@ -24,6 +24,14 @@ and open the template in the editor.
     <a href="misc/friday.php">Friday Lab - October 2</a>
     <a href="misc/friday.php">Friday Lab - October 9</a>
     <a href="advising/">Advising</a>
+    <ol>
+        <li><a href="advising/erd.jpg">ER Diagram</a></li>
+        <li><a href="advising/schema.pdf">Schema</a>
+        <li><a href="advising/tables.php">Tables</a></li>    
+        <li><a href="advising/q01.php">Four Year Plan (SQL)</a></li>
+        
+    </ol>
+    <a href="assignment10/index.php">Final Project</a>
   
     
 </html>
