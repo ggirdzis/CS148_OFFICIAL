@@ -19,8 +19,8 @@ include "top.php";
 //
 // SECTION: 1 Initialize variables
 $update = false;
-$_SERVER["REMOTE_USER"]="ggirdzis";
 
+$_SERVER["REMOTE_USER"]="ggirdzis";
 // SECTION: 1a.
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
@@ -58,8 +58,7 @@ if (isset($_GET["id"])) {
 //
 // Initialize Error Flags one for each form element we validate
 // in the order they appear in section 1c.
-$titleERROR = false;
-$postERROR = false;
+
 
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
@@ -94,14 +93,10 @@ if (isset($_POST["btnSubmit"])) {
     if ($pmkUsername > 0) {
         $update = true;
     }
-  
+   
     // I am not putting the ID in the $data array at this time
 
-    $title = htmlentities($_POST["txtTitle"], ENT_QUOTES, "UTF-8");
-    $data[] = $title;
-
-    $post = htmlentities($_POST["txtPost"], ENT_QUOTES, "UTF-8");
-    $data[] = $post;
+  
 
 
 
@@ -110,15 +105,7 @@ if (isset($_POST["btnSubmit"])) {
 // SECTION: 2c Validation
 //
 
-    if ($title == "") {
-        $errorMsg[] = "Please enter your title.";
-        $titleERROR = true;
-    }
-
-    if ($post == "") {
-        $errorMsg[] = "Please enter your post.";
-        $postERROR = true;
-    }
+    
 
     // should check to make sure its the correct date format
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -143,13 +130,16 @@ if (isset($_POST["btnSubmit"])) {
 
             if ($update) {
 
-
-                $query = 'UPDATE tblPost set fldTitle = "' . $title . '", fldPost = "' . $post . '"  where pmkUsername = "' . $pmkUsername . '"';
                 
-                $data = array($title, $post);
+                
+                
+
+                $query = 'DELETE FROM tblPost';
+                
+                
 
                 if ($_SERVER["REMOTE_USER"] == 'ggirdzis') {
-                    $results = $thisDatabase->update($query, $data, 1, 0, 6, 0, false, false);
+                    $results = $thisDatabase->delete($query,"", 0, 0, 0, 0, false, false);
                 }
             }
 
@@ -231,23 +221,7 @@ if ($dataEntered) { // closing of if marked with: end body submit
                        value="<?php print $pmkUsername; ?>"
                        >
 
-                <label for="txtTitle" class="required">Title
-                    <input type="text" id="txtTitle" name="txtTitle"
-                           value="<?php print $title; ?>"
-                           tabindex="100" maxlength="80" placeholder="Enter your title."
-    <?php if ($titleERROR) print 'class="mistake"'; ?>
-                           onfocus="this.select()"
-                           autofocus>
-                </label>
-
-
-                <label for="txtPost" class="required">Post your post!</label>
-                <textarea id="txtPost"
-                          name="txtPost"
-                          tabindex="200"
-    <?php if ($postERROR) print 'class="mistake"'; ?>
-                          onfocus="this.select()"
-                          style="width: 25em; height: 20em;" ><?php print $post; ?></textarea>
+                
                 <!-- NOTE: no blank spaces inside the text area -->
 
 

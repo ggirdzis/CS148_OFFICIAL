@@ -15,12 +15,12 @@ $dbName = strtoupper(get_current_user()) . '_FINAL';
 
 $thisDatabase = new Database($dbUserName, $whichPass, $dbName);
 
-$username = htmlentities($_SERVER["REMOTE_USER"], ENT_QUOTES, "UTF-8");
 
 
-if ($username == "ggirdzis"){
-    $admin = true;
-}
+
+
+$admin = true;
+
 
 include "top.php";
 
@@ -53,7 +53,9 @@ foreach ($post as $onePost) {
 
     print "<li>";
     if ($admin) {
-        print '<a href="update.php?id=' . $onePost["pmkUsername"] . '">[Edit]</a> ';
+        print '<a href="update.php?id=' . $onePost["pmkUsername"] . '">[Edit]</a>';
+        print '<a href="delete.php?id=' . $onePost["pmkUsername"] . '">[Delete]</a>';
+        
     }
     print $onePost['fldTitle'] . " " . $onePost['fldPost']  ."</li>\n";
 }
