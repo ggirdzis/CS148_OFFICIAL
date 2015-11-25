@@ -93,7 +93,7 @@ if (isset($_POST["btnSubmit"])) {
     if ($pmkUsername > 0) {
         $update = true;
     }
-   
+    print($pmkUsername);
     // I am not putting the ID in the $data array at this time
 
   
@@ -134,12 +134,12 @@ if (isset($_POST["btnSubmit"])) {
                 
                 
 
-                $query = 'DELETE FROM tblPost';
+                $query = 'DELETE FROM tblPost where pmkUsername = ' . $pmkUsername . '';
                 
                 
 
                 if ($_SERVER["REMOTE_USER"] == 'ggirdzis') {
-                    $results = $thisDatabase->delete($query,"", 0, 0, 0, 0, false, false);
+                    $results = $thisDatabase->delete($query,"", 1, 0, 0, 0, false, false);
                 }
             }
 

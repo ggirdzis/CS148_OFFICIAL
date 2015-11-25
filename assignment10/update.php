@@ -94,7 +94,7 @@ if (isset($_POST["btnSubmit"])) {
     if ($pmkUsername > 0) {
         $update = true;
     }
-  
+    print($pmkUsername);
     // I am not putting the ID in the $data array at this time
 
     $title = htmlentities($_POST["txtTitle"], ENT_QUOTES, "UTF-8");
