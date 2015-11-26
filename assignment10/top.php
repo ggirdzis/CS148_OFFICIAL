@@ -72,6 +72,36 @@
             require_once "lib/constants.php";
         }
         
+         if ($path_parts['filename'] == "trend") {
+            include "lib/validation-functions.php";
+            include "lib/mail-message.php";
+            require_once "lib/constants.php";
+        }
+        
+        if ($path_parts['filename'] == "healthy") {
+            include "lib/validation-functions.php";
+            include "lib/mail-message.php";
+            require_once "lib/constants.php";
+        }
+        
+        if ($path_parts['filename'] == "budget") {
+            include "lib/validation-functions.php";
+            include "lib/mail-message.php";
+            require_once "lib/constants.php";
+        }
+        if ($path_parts['filename'] == "gluten") {
+            include "lib/validation-functions.php";
+            include "lib/mail-message.php";
+            require_once "lib/constants.php";
+        }
+        
+        if ($path_parts['filename'] == "vegan") {
+            include "lib/validation-functions.php";
+            include "lib/mail-message.php";
+            require_once "lib/constants.php";
+        }
+        
+        
         
         ?>	
 

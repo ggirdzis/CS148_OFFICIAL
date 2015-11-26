@@ -1,144 +1,126 @@
-/* CSS designed by  Robert Erickson 
 
-to understand the comments like 900px / 960px
-   read http://alistapart.com/article/responsive-web-design/
-
-*/
-/*****************     main layout section             ************************/
-body{
+body {
     margin: 36px auto;
     width: 90%;
 }
-
-#page{
-    margin: 0 auto 53px;
-    width: 93.75%; /* 900px / 960px  */
+#page {
     border: 1px solid black;
     border-radius: 15px;
+    margin: 0 auto 53px;
+    width: 93.75%;
 }
-
-#main{
+#main {
     float: left;
-    width: 62.8888889%; /* 566px / 900px */
+    width: 62.8889%;
 }
-
-#other{
+#other {
     float: right;
-    width: 36.7777778%; /* 331px / 900px */
+    width: 36.7778%;
 }
-
-/*****************     header section             *****************************/
 header h1 {
-    padding: 0.8em 5.33333333%;  /* 48px / 900px */
+    padding: 0.8em 5.33333%;
 }
-
-
-/*****************     navigation section         *****************************/
 nav ol {
-    padding-left: 5.33333333%;  /* 48px / 900px */
+    padding-left: 5.33333%;
 }
-nav ol li{
+nav ol li {
     display: inline-block;
     list-style-type: none;
     padding-right: 3em;
 }
-
-
-/*****************     article section             ****************************/
-/* un comment and see what happens */
-/*
-article{
-    height: 200px;
-    overflow: auto;
+article h1, article p, article table {
+    padding: 0.2em 8.48057%;
 }
-*/
-
-article h1, article p, article table{
-    padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
-}
-
-
-/*****************     aside section              *****************************/
 aside {
     margin: 0 auto;
-    width: 69.7885196%; /* 231px / 331px */
+    width: 69.7885%;
 }
-aside h2, aside p{
-    padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
+aside h2, aside p {
+    padding: 0.2em 8.48057%;
 }
-
-
-/*****************     footer section              ****************************/
-footer{
+footer {
     clear: both;
-    padding: 0.8em 5.33333333%;  /* 48px / 900px */
+    padding: 0.8em 5.33333%;
 }
-
-/*****************     form section                ****************************/
-#form article#main{
+#form article#main {
     float: none;
-    margin: auto; /* because of the fixed width this centers the form */
+    margin: auto;
     text-align: left;
-    width: 600px; /* not repsonive but fixed */
+    width: 600px;
 }
-
-/* need to clear any floats that may exist */
-fieldset{
+fieldset {
     border: 1px solid #00498e;
-    clear: both;  
+    clear: both;
 }
-/* just pushes content to left side of the box. */
-fieldset.contact{
+fieldset.contact {
     float: left;
 }
-/* when you look at the labels this pushes then next to the input and right
-aligns them. Display block means they are each on their own line. */
-fieldset.contact label{
+fieldset.contact label {
     display: block;
-    text-align: right /* pushes the text to the right where they line up */
-        /* the float left above pushes everything back to the left*/
+    text-align: right;
 }
-
-fieldset.contact input{
-    width: 15em; /* works with above to be the same size for the boxes */
+fieldset.contact input {
+    width: 15em;
 }
-
-fieldset.buttons{
-    border: none;
+fieldset.buttons {
+    border: medium none;
 }
-
 fieldset.wrapper {
-    border: 0;
+    border: 0 none;
     margin: auto;
 }
-
 fieldset.wrapper legend {
     color: #00498e;
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 10px;
 }
-
 fieldset.wrapper > legend {
-    /* i only want the first legend ie if it follows the class wrapper */
     font-size: 2em;
 }
-
 label {
     color: #005cb3;
     display: block;
-    font-size: .9em;
+    font-size: 0.9em;
     font-weight: bold;
 }
-
-/* style the errors in the form so they are visible */
 .mistake {
-    color: #fff;
-    background-color:#800;
+    background-color: #800;
     border: thin solid #000;
+    color: #fff;
 }
-
-/* style the list of errors that will show before the form */
-#errors ol li{
+#errors ol li {
     color: #ff5555;
+}
+table {
+    width: 100%;
+}
+td {
+    background-color: turquoise;
+    display: block;
+    font-size: 14pt;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+td:last-child {
+    background: turquoise url("http://4.bp.blogspot.com/-rshRPIn2sQU/UdRiK7jG5HI/AAAAAAAAHDA/ycbcyNoEYb8/s269/heart.png") no-repeat scroll 1% center / 1em auto;
+    font-size: 12pt;
+    padding-left: 3%;
+    text-align: left;
+}
+#two ol {
+    float: left;
+}
+td:first-child {
+    font-size: 20pt;
+    font-weight: bold;
+    text-decoration: underline;
+}
+nav ol li {
+    margin-right: auto;
+    margin-left: auto;
+}
+#two li {
+    display: block;
 }

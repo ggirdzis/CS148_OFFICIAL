@@ -16,13 +16,68 @@ $dbName = strtoupper(get_current_user()) . '_FINAL';
 $thisDatabase = new Database($dbUserName, $whichPass, $dbName);
 
 
+include "top.php";
+//##############################################################################
+//
+// This page lists your tables and fields within your database. if you click on
+// a database name it will show you all the records for that table. 
+// 
+// 
+// This file is only for class purposes and should never be publicly live
+//##############################################################################
+print '<table>';
+
+    $columns=3;
+         
+    //now print out each record
+  
+    $query2 = 'select fldTitle, fldPost, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId';
+   // $info3 = $thisDatabaseReader->testquery($query2, "", 0, 0, 0, 0, false, false);
+    $info3 = $thisDatabaseReader->select($query2, "", 0, 0, 0, 0, false, false);
+
+    $highlight = 0; // used to highlight alternate rows
+    
+   // print "<p>Total Records:".count($info3).'</p>';
+   // print '<p>SQL'.$query.'</p>';
+    
+    
+    foreach ($info3 as $rec) {
+        
+        $highlight++;
+        if ($highlight % 2 != 0) {
+            $style = ' odd ';
+        } else {
+            $style = ' even ';
+        }
+      
+        
+        print '<tr class="' . $style . '">';
+         
+        for ($i = 0; $i < $columns; $i++) {
+            
+            
+            print '<td>'  . $rec[$i]  . '</td>';
+            
+        }
+       
+        print '</tr>';
+        
+    }
+
+    // all done
+    print '</table>';
+    print '</aside>';
+
+print '</article>';
+
+
 
 
 
 $admin = true;
 
 
-include "top.php";
+
 
 print "<article>";
 // %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
@@ -37,7 +92,7 @@ if ($debug)
 
 
 $post = $thisDatabase->select($query, "", 0, 1, 0, 0, false, false);
-$info2 = $thisDatabase->testquery($query, "", 0, 1, 0, 0, false, false);
+//$info2 = $thisDatabase->testquery($query, "", 0, 1, 0, 0, false, false);
 
 if ($debug) {
     print "<pre>";

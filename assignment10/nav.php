@@ -1,5 +1,5 @@
 <!-- ######################     Main Navigation   ########################## -->
-<nav>
+<nav id = "one">
     <ol>
         <?php
         /* This sets the current page to not be a link. Repeat this if block for
@@ -7,7 +7,7 @@
         if ($path_parts['filename'] == "home") {
             print '<li class="activePage">Home</li>';
         } else {
-            print '<li><a href="home.php">Home</a></li>';
+            print '<li><a href="index.php">Home</a></li>';
         }
 
         /* example of repeating */
@@ -23,6 +23,27 @@
         } else {
             print '<li><a href="post.php">Post</a></li>';  
         }
+        
+        if ($path_parts['filename'] == "trend") {
+            print '<li class="activePage">Hot & Fluffy Trends</li>';
+        } else {
+            print '<li><a href="trend.php">Hot & Fluffy Trends</a></li>';  
+        }
+        
+         if ($path_parts['filename'] == "special") {
+            print '<li class="activePage">Specialty Cakes</li>';
+        } else {
+            print '<li><a href="special.php">Specialty Cakes</a></li>';  
+        }
+        
+        if ($path_parts['filename'] == "about") {
+            print '<li class="activePage">About Us!</li>';
+        } else {
+            print '<li><a href="about.php">Abous Us!</a></li>';  
+        }
+        
+       
+        
         
         ?>
     </ol>

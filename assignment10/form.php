@@ -472,7 +472,7 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
                     <label for="chkfldGluten"><input type="checkbox" 
                                                      id="chkfldGluten" 
                                                      name="chkfldGluten" 
-                                                     value="Gluten">Gluten
+                                                     value="Gluten">Gluten-Free
                     </label>
 
                 </fieldset>
