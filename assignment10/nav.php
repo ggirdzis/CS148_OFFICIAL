@@ -4,7 +4,7 @@
         <?php
         /* This sets the current page to not be a link. Repeat this if block for
          *  each menu item */
-        if ($path_parts['filename'] == "home") {
+        if ($path_parts['filename'] == "index") {
             print '<li class="activePage">Home</li>';
         } else {
             print '<li><a href="index.php">Home</a></li>';
@@ -12,16 +12,16 @@
 
         /* example of repeating */
         if ($path_parts['filename'] == "form") {
-            print '<li class="activePage">Join</li>';
+            print '<li class="activePage">Post Something Sweet!</li>';
         } else {
-            print '<li><a href="form.php">Join</a></li>';
+            print '<li><a href="form.php">Post Something Sweet!</a></li>';
         }
         
         
         if ($path_parts['filename'] == "post") {
-            print '<li class="activePage">Post</li>';
+            print '<li class="activePage">Batter Chatter</li>';
         } else {
-            print '<li><a href="post.php">Post</a></li>';  
+            print '<li><a href="post.php">Batter Chatter</a></li>';  
         }
         
         if ($path_parts['filename'] == "trend") {
@@ -48,3 +48,5 @@
         ?>
     </ol>
 </nav>
+
+<hr>

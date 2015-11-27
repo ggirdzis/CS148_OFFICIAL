@@ -16,7 +16,7 @@ print '<table>';
 $columns = 3;
 
 //now print out each record
-print "<h2>Vegan</h2>";
+print "<h2>Healthy</h2>";
 $query2 = 'select fldTitle, fldPost, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId where fldHealthy = 1';
 
 $info2 = $thisDatabaseReader->select($query2, "", 1, 0, 0, 0, false, false);

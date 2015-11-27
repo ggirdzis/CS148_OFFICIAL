@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    
     <head>
-        <title>Mark me wrong</title>
+        <title>Cupcake Connection</title>
         <meta charset="utf-8">
-        <meta name="author" content="Mark me wrong">
-        <meta name="description" content="Mark me wrong for not changing this">
+        <meta name="author" content="Gretchen Girdzis">
+        <meta name="description" content="Website created for people to share cupcake recipes and learning new recipes and tips in relation to cupcakes.">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -106,6 +107,8 @@
         ?>	
 
     </head>
+    
+
     <!-- ################ body section ######################### -->
 
     <?php
@@ -114,3 +117,4 @@
     include "header.php";
     include "nav.php";
     ?>
+

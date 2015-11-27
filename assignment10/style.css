@@ -1,13 +1,51 @@
 
+#btnSubmit {
+    font-size: 1em;
+}
 body {
     margin: 36px auto;
     width: 90%;
+}
+#worldHome {
+    display: block;
+    margin: auto;
+}
+#para2 {
+    background-color: rgba(245, 225, 225, 0.8);
+    border: 1px solid;
+    font-size: 15pt;
+    line-height: 2em;
+    padding: 1em;
+    text-indent: 3em;
+}
+fieldset input:hover, .post #txtPost:hover, .post select:hover {
+    box-shadow: 1px 1px 10px pink;
+}
+.post select {
+    font-size: 10pt;
+}
+.checkbox label input {
+    float: left;
+}
+select {
+    font-size: 8pt;
+    height: 2em;
 }
 #page {
     border: 1px solid black;
     border-radius: 15px;
     margin: 0 auto 53px;
     width: 93.75%;
+}
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+form fieldset {
+    border: medium none;
+}
+nav {
+    background-color: rgba(200, 30, 90, 0.8);
+    color: lightgreen;
 }
 #main {
     float: left;
@@ -31,6 +69,9 @@ nav ol li {
 article h1, article p, article table {
     padding: 0.2em 8.48057%;
 }
+.checkbox label input {
+    text-align: center;
+}
 aside {
     margin: 0 auto;
     width: 69.7885%;
@@ -53,7 +94,7 @@ fieldset {
     clear: both;
 }
 fieldset.contact {
-    float: left;
+    border: 1px solid;
 }
 fieldset.contact label {
     display: block;
@@ -70,13 +111,18 @@ fieldset.wrapper {
     margin: auto;
 }
 fieldset.wrapper legend {
-    color: #00498e;
+    color: black;
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 10px;
+    text-decoration: underline;
+    width: 100%;
 }
 fieldset.wrapper > legend {
     font-size: 2em;
+}
+.wrapper p {
+    font-size: 14pt;
 }
 label {
     color: #005cb3;
@@ -118,9 +164,158 @@ td:first-child {
     text-decoration: underline;
 }
 nav ol li {
-    margin-right: auto;
-    margin-left: auto;
+    border-color: #777777 #333333 #444444 #777777;
+}
+nav {
+    display: block;
+    width: 90%;
 }
 #two li {
     display: block;
+}
+nav ol li {
+    text-align: center;
+}
+nav ol li {
+    text-align: center;
+}
+nav ol li a {
+    color: black;
+    font-size: 13pt;
+}
+#one {
+    border: medium solid black;
+    font-size: 100%;
+    margin: auto auto 1%;
+}
+#one ol li {
+    margin-left: auto;
+    margin-right: auto;
+}
+form {
+    border: medium solid;
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+hr {
+    border-width: 1px;
+    color: lightgray;
+}
+label {
+    color: turquoise;
+    float: left;
+    font-size: 12pt;
+    margin: 1em;
+    text-align: center;
+}
+fieldset .textarea {
+}
+.post {
+    border: 1px solid;
+    margin-top: 1em;
+}
+#check label {
+    width: 25%;
+}
+#txtPost {
+    float: left;
+}
+#txtTitle {
+    display: block;
+    width: 100%;
+}
+.required input {
+    font-size: 12pt;
+    height: 2em;
+}
+.post .checkbox legend {
+    color: black;
+    display: inline;
+    text-align: center;
+}
+.checkbox {
+}
+.post label {
+    display: block;
+    float: none;
+    margin: auto;
+    width: 50%;
+}
+html {
+    background-image: url("http://thesmashable.com/wp-content/uploads/2013/12/awesome-christmas-backgrounds-wallpapers-christmas-patterns-free-download.png");
+    background-repeat: repeat;
+    background-size: 100% auto;
+}
+.textarea {
+    display: block;
+    float: none;
+    margin: auto;
+    width: 50%;
+}
+.post #txtPost {
+    font-family: serif;
+    font-size: 14pt;
+}
+html head {
+    background-color: white;
+}
+#trend select:hover {
+    box-shadow: 1px 1px 10px pink;
+}
+#trend #btnSubmit {
+    float: left;
+}
+#trend select {
+    font-size: 10pt;
+}
+h2 {
+    float: left;
+    font-size: 30pt;
+    text-align: center;
+    text-decoration: underline;
+    width: 100%;
+}
+footer {
+    background-color: aliceblue;
+    border: 2px solid;
+    display: block;
+    margin: 1em auto auto;
+    text-align: center;
+    width: 25%;
+}
+#two ol li {
+    display: block;
+    margin: auto;
+    text-align: left;
+}
+#two ol {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: medium solid;
+    float: left;
+    line-height: 2em;
+    margin: auto;
+    padding-left: 0.5em;
+}
+#para1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 60%;
+}
+#para1 img {
+    width: 200px;
+}
+#para1 p {
+    float: right;
+    font-size: 15pt;
+    text-indent: 2em;
+    width: 60%;
+}
+#world {
+    float: left;
+    width: 145px;
 }

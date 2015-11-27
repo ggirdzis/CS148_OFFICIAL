@@ -1,14 +1,10 @@
 
 <?php
 include "top.php";
+?>
+ 
 
-//%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
-//
-// SECTION: 1 Initialize variables
-//
-// SECTION: 1a.
-// variables for the classroom purposes to help find errors.
-
+<?php
 $debug = false;
 
 if (isset($_GET["debug"])) { // ONLY do this in a classroom environment
@@ -232,9 +228,8 @@ print "<p>Form is valid</p>";
         // This block saves the data to a CSV file.
 $sql = 'INSERT INTO tblPerson (fldFirstName, fldLastName, fldEmail) VALUES ("'
 . $firstName . '", "' . $lastName . '", "' . $email . '")';
-$sql2 = 'INSERT INTO tblPost (fldHomemade, fldHealthy, '
-. 'fldBudget, fldVegan, fldGluten, fldPost, fldTitle, fldSkill, fldTrendingValue) VALUES ("' .
-$homemade . '", "' . $healthy . '", "' .
+$sql2 = 'INSERT INTO tblPost (fldHealthy, '
+. 'fldBudget, fldVegan, fldGluten, fldPost, fldTitle, fldSkill, fldTrendingValue) VALUES ("' . $healthy . '", "' .
 $budget . '", "' . $vegan . '", "' . $gluten . '", "' . $post . '", "' . $title .
 '", "' . $skill . '", "' . $hash .'")';
 
@@ -245,10 +240,10 @@ print "<p>SQL 1: " . $sql;
 print "<P>SQL 2: " . $sql2;
 
 $plan = $thisDatabaseWriter->insert($sql, "", 0, 0, 6, 0, false, false);
-$plan2 = $thisDatabaseWriter->insert($sql2, "", 0, 0, 18, 0, false, false);
+$plan2 = $thisDatabaseWriter->insert($sql2, "", 0, 0, 16, 0, false, false);
 //   $plan3 = $thisDatabaseWriter->insert($sql3, "", 0, 0, 4, 0, false, false);
 
-$info2 = $thisDatabaseWriter->testquery($sql2, "", 0, 0, 18, 0, false, false);
+$info2 = $thisDatabaseWriter->testquery($sql2, "", 0, 0, 16, 0, false, false);
 
 $planId = $thisDatabaseWriter->lastInsert();
 $planId2 = $thisDatabaseWriter->lastInsert();
@@ -379,20 +374,21 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
 
  */
 ?>
+    
 
     <form action="<?php print $phpSelf; ?>"
           method="post"
           id="frmRegister">
 
         <fieldset class="wrapper">
-            <legend>Register Today</legend>
-            <p>You information will greatly help us with our research.</p>
+            <legend>Post Something Sweet!</legend>
+            <p>Share your cupcake wisdom with the world, and may the favor be returned to you.</p>
 
             <fieldset class="wrapperTwo">
-                <legend>Please complete the following form</legend>
+                <legend>Just give us some information and post your post!</legend>
 
                 <fieldset class="contact">
-                    <legend>Contact Information</legend>
+                    <h2>Contact Information</h2>
                     <label for="txtFirstName" class="required">First Name
                         <input type="text" id="txtFirstName" name="txtFirstName"
                                value="<?php print $firstName; ?>"
@@ -444,16 +440,31 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
 
 
                 </fieldset> <!-- ends contact -->
-
-
+                
+                <fieldset class="post">
+                    <h2>Post Information</h2>
+                     <label for="txtTitle" class="required">Title
+                    <input type="text" id="txtTitle" name="txtTitle"
+                           value="<?php print $title; ?>"
+                           tabindex="120" maxlength="45" placeholder="Enter a title for your post!"
+                    <?php if ($emailERROR) print 'class="mistake"'; ?>
+                           onfocus="this.select()"
+                           >
+                </label>
+                    <fieldset  class="textarea">
+                        <label for="txtPost" class="required">Post your post!</label>
+                        <textarea id="txtPost"
+                                  name="txtPost"
+                                  tabindex="200"
+<?php if ($postERROR) print 'class="mistake"'; ?>
+                                  onfocus="this.select()"
+                                  style="width: 25em; height: 20em;" ><?php print $post; ?></textarea>
+                        <!-- NOTE: no blank spaces inside the text area -->
+                    </fieldset>
 
                 <fieldset class="checkbox">
-                    <legend>Check all that apply to your post:</legend>
-                    <label for="chkfldHomemade"><input type="checkbox" 
-                                                       id="chkfldHomemade" 
-                                                       name="chkfldHomemade" 
-                                                       value="Homemade">Homemade
-                    </label>
+                    <h2>Check all that apply to your post:</h2>
+                    <div id="check">
                     <label for="chkfldHealthy"><input type="checkbox" 
                                                       id="chkfldHealthy" 
                                                       name="chkfldHealthy" 
@@ -462,7 +473,7 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
                     <label for="chkfldBudget"><input type="checkbox" 
                                                      id="chkfldBudget" 
                                                      name="chkfldBudget" 
-                                                     value="Budget">Budget
+                                                     value="Budget">Budget-Savor
                     </label>
                     <label for="chkfldVegan"><input type="checkbox" 
                                                     id="chkfldVegan" 
@@ -474,6 +485,7 @@ if (isset($_POST["btnSubmit"]) AND empty($errorMsg)) { // closing of if marked w
                                                      name="chkfldGluten" 
                                                      value="Gluten">Gluten-Free
                     </label>
+                    </div>
 
                 </fieldset>
 
@@ -507,7 +519,7 @@ $buildings = $thisDatabase->select($query, "", 0, 1, 0, 0, false, false);
                     $message .= '        tabindex="300" >';
 
 
-                    print "<h2>List box built from Database</h2>";
+                    print "<h2>Categorize your post so other people can find it!</h2>";
                     // or you can print it out
                     print '<label for="lsthash">Trend ';
                     print '<select id="lsthash" ';
@@ -531,26 +543,9 @@ $buildings = $thisDatabase->select($query, "", 0, 1, 0, 0, false, false);
 
                 </fieldset>
 
-                <label for="txtTitle" class="required">Title
-                    <input type="text" id="txtEmail" name="txtTitle"
-                           value="<?php print $title; ?>"
-                           tabindex="120" maxlength="45" placeholder="Enter a title for your post!"
-                    <?php if ($emailERROR) print 'class="mistake"'; ?>
-                           onfocus="this.select()"
-                           >
-                </label>
+               
 
-                <fieldset class="post">
-                    <fieldset  class="textarea">
-                        <label for="txtPost" class="required">Post your post!</label>
-                        <textarea id="txtPost"
-                                  name="txtPost"
-                                  tabindex="200"
-<?php if ($postERROR) print 'class="mistake"'; ?>
-                                  onfocus="this.select()"
-                                  style="width: 25em; height: 20em;" ><?php print $post; ?></textarea>
-                        <!-- NOTE: no blank spaces inside the text area -->
-                    </fieldset>
+                
 
 
                 </fieldset>
@@ -568,6 +563,8 @@ $buildings = $thisDatabase->select($query, "", 0, 1, 0, 0, false, false);
 
 
     </form>
+        
+   
 
 <?php
 } // end body submit

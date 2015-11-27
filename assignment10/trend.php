@@ -41,7 +41,9 @@ $message .= '        name="lsthash"';
 $message .= '        tabindex="300" >';
 
 
-print "<h2>List box built from Database</h2>";
+?>
+    <div id = "trend">
+    <?php
 // or you can print it out
 print '<label for="lsthash">Trend ';
 print '<select id="lsthash" ';
@@ -76,6 +78,9 @@ print '</select></label>';
 <input type = "submit" id = "btnSubmit" name = "btnSubmit" value = "Register" tabindex = "900" class = "button">
 
 </fieldset>
+        
+</div>
+    <hr>
 <?php
 print '<table>';
 
