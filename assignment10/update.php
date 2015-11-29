@@ -94,7 +94,7 @@ if (isset($_POST["btnSubmit"])) {
     if ($pmkUsername > 0) {
         $update = true;
     }
-    print($pmkUsername);
+    
     // I am not putting the ID in the $data array at this time
 
     $title = htmlentities($_POST["txtTitle"], ENT_QUOTES, "UTF-8");
@@ -187,7 +187,7 @@ if (isset($_POST["btnSubmit"])) {
 // If its the first time coming to the form or there are errors we are going
 // to display the form.
 if ($dataEntered) { // closing of if marked with: end body submit
-    print "<h1>Record Saved</h1> ";
+    print "<h1>Information Saved.</h1> ";
 } else {
 //####################################
 //
@@ -196,7 +196,7 @@ if ($dataEntered) { // closing of if marked with: end body submit
 // display any error messages before we print out the form
     if ($errorMsg) {
         print '<div id="errors">';
-        print '<h1>Your form has the following mistakes</h1>';
+        
 
         print "<ol>\n";
         foreach ($errorMsg as $err) {
@@ -225,7 +225,7 @@ if ($dataEntered) { // closing of if marked with: end body submit
               method="post"
               id="frmRegister">
             <fieldset class="wrapper">
-                <legend>Poets</legend>
+                <h3>Update Information Here:</h3>
 
                 <input type="hidden" id="hidUsername" name="hidUsername"
                        value="<?php print $pmkUsername; ?>"

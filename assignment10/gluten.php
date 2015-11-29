@@ -1,4 +1,7 @@
-<?php include("top.php");
+<?php include("top.php");?>
+<h2>Specialty Cakes: Gluten-Free</h2> 
+<div id="mainbod">
+<?php
 
 include("nav2.php");
 ?>
@@ -15,8 +18,8 @@ print '<table>';
 $columns = 3;
 
 //now print out each record
-print "<h2>Gluten-Free</h2>";
-$query2 = 'select fldTitle, fldPost, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId where fldGluten = 1';
+
+$query2 = 'select fldTitle, fldPost, fldSkill, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId where fldGluten = 1';
 
 $info2 = $thisDatabaseReader->select($query2, "", 1, 0, 0, 0, false, false);
 
@@ -59,3 +62,4 @@ print '</article>';
 
 
 include("footer.php");?>
+</div>

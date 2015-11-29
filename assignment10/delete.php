@@ -93,7 +93,7 @@ if (isset($_POST["btnSubmit"])) {
     if ($pmkUsername > 0) {
         $update = true;
     }
-    print($pmkUsername);
+  
     // I am not putting the ID in the $data array at this time
 
   
@@ -156,7 +156,7 @@ if (isset($_POST["btnSubmit"])) {
             $thisDatabase->db->rollback();
             if ($debug)
                 print "Error!: " . $e->getMessage() . "</br>";
-            $errorMsg[] = "There was a problem with accpeting your data please contact us directly.";
+            $errorMsg[] = "There was a problem with accepting your data please contact us directly.";
         }
     } // end form is valid
 } // ends if form was submitted.
@@ -177,7 +177,7 @@ if (isset($_POST["btnSubmit"])) {
 // If its the first time coming to the form or there are errors we are going
 // to display the form.
 if ($dataEntered) { // closing of if marked with: end body submit
-    print "<h1>Record Saved</h1> ";
+    print "<h1>Record Deleted.</h1> ";
 } else {
 //####################################
 //
@@ -215,7 +215,7 @@ if ($dataEntered) { // closing of if marked with: end body submit
               method="post"
               id="frmRegister">
             <fieldset class="wrapper">
-                <legend>Poets</legend>
+                <h3>Delete Record?</h3>
 
                 <input type="hidden" id="hidUsername" name="hidUsername"
                        value="<?php print $pmkUsername; ?>"
@@ -230,7 +230,7 @@ if ($dataEntered) { // closing of if marked with: end body submit
             </fieldset> <!-- ends wrapper Two -->
             <fieldset class="buttons">
                 <legend></legend>
-                <input type="submit" id="btnSubmit" name="btnSubmit" value="Save" tabindex="900" class="button">
+                <input type="submit" id="btnSubmit" name="btnSubmit" value="Delete" tabindex="900" class="button">
             </fieldset> <!-- ends buttons -->
             </fieldset> <!-- Ends Wrapper -->
         </form>

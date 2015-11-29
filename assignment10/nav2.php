@@ -40,12 +40,13 @@
     </ol>
 </nav>
 <div id="para1">
-<img src="arrow.png"/>
+
+
 
 <p>
     Here at Cupcake Connection, we hope to accommodate all the wants and needs of a cupcake! Check out our specialty cakes and we hope you find for whatever you are looking!
 </p>
 
-
 </div>
-<img id="world" src="November 26, 2015/worldcake.png"/>
+
+

@@ -1,4 +1,4 @@
- Code for Poets
+
 
 <?php
 /* %^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
@@ -17,6 +17,10 @@ $thisDatabase = new Database($dbUserName, $whichPass, $dbName);
 
 
 include "top.php";
+?>
+<h2>Batter Chatter</h2>
+<div id="mainbod">
+<?php
 //##############################################################################
 //
 // This page lists your tables and fields within your database. if you click on
@@ -27,11 +31,11 @@ include "top.php";
 //##############################################################################
 print '<table>';
 
-    $columns=3;
+    $columns=4;
          
     //now print out each record
   
-    $query2 = 'select fldTitle, fldPost, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId';
+    $query2 = 'select fldTitle, fldPost, fldSkill, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId';
    // $info3 = $thisDatabaseReader->testquery($query2, "", 0, 0, 0, 0, false, false);
     $info3 = $thisDatabaseReader->select($query2, "", 0, 0, 0, 0, false, false);
 
@@ -118,4 +122,4 @@ print "</ol>\n";
 print "</article>";
 include "footer.php";
 
-
+print "</div>";

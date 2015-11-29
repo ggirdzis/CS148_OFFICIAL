@@ -1,7 +1,11 @@
 <?php include("top.php");
-
+?>
+<h2>Specialty Cakes: Healthy</h2> 
+<div id="mainbod">
+<?php
 include("nav2.php");
 ?>
+
 <?php
 require_once('../bin/Database.php');
 $dbUserName = get_current_user() . '_writer';
@@ -13,11 +17,11 @@ $thisDatabase = new Database($dbUserName, $whichPass, $dbName);
 
 print '<table>';
 
-$columns = 3;
+$columns = 4;
 
 //now print out each record
-print "<h2>Healthy</h2>";
-$query2 = 'select fldTitle, fldPost, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId where fldHealthy = 1';
+
+$query2 = 'select fldTitle, fldPost, fldSkill, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId where fldHealthy = 1';
 
 $info2 = $thisDatabaseReader->select($query2, "", 1, 0, 0, 0, false, false);
 
@@ -61,3 +65,4 @@ print '</article>';
 
 
 include("footer.php");?>
+</div>

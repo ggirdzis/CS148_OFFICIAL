@@ -2,6 +2,79 @@
 #btnSubmit {
     font-size: 1em;
 }
+#trend table tbody tr {
+    text-align: left;
+}
+#trend #frmRegister {
+    border: medium none;
+}
+#delete h1, #update h1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: medium solid;
+    display: block;
+    margin: 2em auto;
+    text-align: center;
+    width: 50%;
+}
+#update #main {
+    display: block;
+    margin: auto;
+}
+#update #main #frmRegister .wrapper {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+#delete #main {
+    display: block;
+    margin: auto auto 2em;
+    width: 100%;
+}
+#update #main {
+    display: block;
+    margin: auto auto 2em;
+    width: 100%;
+}
+#update #main #frmRegister label, #update #main #frmRegister input, #update #main #frmRegister #txtPost {
+    display: block;
+    float: none;
+    font-family: serif;
+    margin: 1em auto auto;
+    width: 80%;
+}
+#errors ol {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: medium solid;
+    font-size: 13pt;
+    font-weight: bold;
+    list-style: outside none none;
+    padding: 1em;
+    text-align: center;
+}
+span {
+    font-style: italic;
+    font-weight: bold;
+}
+h3 {
+    text-align: center;
+}
+#form #mainbod {
+    font-size: 13pt;
+    line-height: 2em;
+    padding: 2em;
+    text-align: left;
+}
+header {
+}
+#mainbod {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: medium solid;
+}
+#cc {
+    display: block;
+    margin: auto;
+    width: 600px;
+}
 body {
     margin: 36px auto;
     width: 90%;
@@ -36,6 +109,11 @@ select {
     border-radius: 15px;
     margin: 0 auto 53px;
     width: 93.75%;
+}
+header {
+    display: block;
+    margin: auto auto 1em;
+    width: 75%;
 }
 form {
     background-color: rgba(255, 255, 255, 0.9);
@@ -141,6 +219,10 @@ label {
 table {
     width: 100%;
 }
+#mainbod table tbody tr {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: medium solid;
+}
 td {
     background-color: turquoise;
     display: block;
@@ -149,6 +231,16 @@ td {
     margin-right: auto;
     padding: 1em;
 }
+td {
+}
+td:nth-child(2) {
+    text-indent: 3em;
+}
+td:first-child {
+    text-align: center;
+}
+td:nth-child(3) {
+}
 td:last-child {
     background: turquoise url("http://4.bp.blogspot.com/-rshRPIn2sQU/UdRiK7jG5HI/AAAAAAAAHDA/ycbcyNoEYb8/s269/heart.png") no-repeat scroll 1% center / 1em auto;
     font-size: 12pt;
@@ -156,7 +248,9 @@ td:last-child {
     text-align: left;
 }
 #two ol {
+    display: block;
     float: left;
+    margin: auto;
 }
 td:first-child {
     font-size: 20pt;
@@ -168,7 +262,7 @@ nav ol li {
 }
 nav {
     display: block;
-    width: 90%;
+    width: 100%;
 }
 #two li {
     display: block;
@@ -181,12 +275,14 @@ nav ol li {
 }
 nav ol li a {
     color: black;
-    font-size: 13pt;
+    font-size: 14pt;
 }
 #one {
     border: medium solid black;
+    border-radius: 35px;
     font-size: 100%;
     margin: auto auto 1%;
+    text-align: center;
 }
 #one ol li {
     margin-left: auto;
@@ -277,9 +373,9 @@ h2 {
     text-decoration: underline;
     width: 100%;
 }
+html {
+}
 footer {
-    background-color: aliceblue;
-    border: 2px solid;
     display: block;
     margin: 1em auto auto;
     text-align: center;
@@ -299,23 +395,64 @@ footer {
     padding-left: 0.5em;
 }
 #para1 {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid;
-    float: left;
-    margin-left: 2%;
-    margin-right: 2%;
-    width: 60%;
+    width: 100%;
 }
-#para1 img {
-    width: 200px;
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+#para1 {
+}
+#trend label, #trend .buttons #btnSubmit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 #para1 p {
-    float: right;
-    font-size: 15pt;
+    font-size: 18pt;
+    line-height: 2em;
+    margin-left: 5%;
+    text-align: left;
     text-indent: 2em;
-    width: 60%;
+    width: 90%;
+}
+#trend .buttons #btnSubmit {
+    display: block;
+    margin: auto;
 }
 #world {
     float: left;
     width: 145px;
+}
+#frmRegister {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+#btnSubmit {
+}
+#update #main #frmRegister {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+#trend #trendpara {
+    display: block;
+    font-size: 15pt;
+    margin: auto;
+    width: 80%;
+}
+a:hover {
+    border-bottom: 2px solid turquoise;
+}
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: medium solid;
+    border-radius: 55px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+#two ol {
 }

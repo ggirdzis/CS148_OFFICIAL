@@ -1,6 +1,11 @@
 <?php
 
 include("top.php");
+
+?>
+<h2>Hot & Fluffy Trends</h2>
+<div id="mainbod">
+<?php
 $hash = "";
 
 if (isset($_POST["btnSubmit"])) {
@@ -12,6 +17,10 @@ $dataRecord[] = $hash;
 <form action="<?php print $phpSelf; ?>"
           method="post"
           id="frmRegister">
+    
+    <div id="trendpara">
+    <p>Look at what other people are posting! Look at posts in categories such as <span>Christmas</span>, <span>Weddings</span>, and <span>Tips & Tricks</span>! Have an idea to post in one of these categories? Post your idea by clicking: <a href="form.php">here!</a></p>
+</div>
 <?php
 require_once('../bin/Database.php');
 $dbUserName = get_current_user() . '_writer';
@@ -79,7 +88,11 @@ print '</select></label>';
 
 </fieldset>
         
+        
 </div>
+    
+    
+        
     <hr>
 <?php
 print '<table>';
@@ -88,7 +101,7 @@ $columns = 4;
 
 //now print out each record
 
-$query2 = 'select fldTitle, fldPost, fldTrendingValue, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId where fldTrendingValue = "'. $hash . '"';
+$query2 = 'select fldTitle, fldPost, fldSkill, fldFirstName from tblPost inner join tblPerson on tblPost.pmkUsername = tblPerson.pmkId where fldTrendingValue = "'. $hash . '"';
 //$info4 = $thisDatabaseReader->testquery($query2, "", 1, 0, 2, 0, false, false);
 $info4 = $thisDatabaseReader->select($query2, "", 1, 0, 2, 0, false, false);
 
@@ -138,7 +151,7 @@ print '</article>';
 
 <?php include "footer.php"; ?>
 
-
+</div>
 
 </body>
 </html>

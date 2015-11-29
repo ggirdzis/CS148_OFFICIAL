@@ -36,13 +36,7 @@
             print '<li><a href="special.php">Specialty Cakes</a></li>';  
         }
         
-        if ($path_parts['filename'] == "about") {
-            print '<li class="activePage">About Us!</li>';
-        } else {
-            print '<li><a href="about.php">Abous Us!</a></li>';  
-        }
-        
-       
+      
         
         
         ?>
