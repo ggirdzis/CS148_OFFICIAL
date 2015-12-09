@@ -119,8 +119,9 @@ print "<ol>\n";
 
 if ($admin)
 {    
+    
 foreach ($post as $onePost) {
-
+    
     print "<li>";
     if ($admin) {
         print '<a href="update.php?id=' . $onePost["pmkUsername"] . '">[Edit]</a>';
