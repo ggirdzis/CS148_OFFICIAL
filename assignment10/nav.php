@@ -36,7 +36,9 @@
             print '<li><a href="special.php">Specialty Cakes</a></li>';  
         }
         
-      
+        
+        $username = htmlentities($_SERVER["REMOTE_USER"], ENT_QUOTES, "UTF-8"); 
+        
         
         
         ?>

@@ -202,12 +202,18 @@ if (isset($_POST["btnSubmit"])) {
     if ($title == "") {
         $errorMsg[] = "Please enter your title.";
         $titleERROR = true;
+    }   elseif (!verifyAlphaNum($title)) {
+        $errorMsg[] = "Your title appears to contain a special character.";
+        $titleERROR = true;
     }
 
 
 
     if ($post == "") {
         $errorMsg[] = "You have no post to post!";
+        $postERROR = true;
+    }   elseif (!verifyAlphaNum($post)) {
+        $errorMsg[] = "Your post appears to contain a special character.";
         $postERROR = true;
     }
 
@@ -260,7 +266,7 @@ if (isset($_POST["btnSubmit"])) {
         // build a message to display on the screen in section 3a and to mail
 // to the person filling out the form (section 2g).
 
-        $message = "<h3></h3>" . $firstName. " - Thank you so much for posting through Cupcake Connection. We are sure that your post will be greatly appreciated by others. Thank you for being a part of our community! Do not forget to check out <span>Batter Chatter</span> for the latest and greatest posts!";
+       $message = "<h3></h3>" . $firstName. " - Thank you so much for posting through Cupcake Connection. We are sure that your post will be greatly appreciated by others. Thank you for being a part of our community! Do not forget to check out <span>Batter Chatter</span> for the latest and greatest posts!";
 
       
        foreach ($_POST as $key => $value) {
@@ -385,7 +391,7 @@ print "</div>";
 
             <fieldset class="wrapper">
                 <legend>Post Something Sweet!</legend>
-                <p>Share your cupcake wisdom with the world, and may the favor be returned to you.</p>
+                <p>Share your cupcake wisdom with the world, and may the flavor be returned to you.</p>
 
                 <fieldset class="wrapperTwo">
                     <legend>Just give us some information and post your post!</legend>

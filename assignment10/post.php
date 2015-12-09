@@ -16,6 +16,11 @@ $dbName = strtoupper(get_current_user()) . '_FINAL';
 $thisDatabase = new Database($dbUserName, $whichPass, $dbName);
 
 
+
+$adminId = "ggirdzis";
+$adminId2 = "rerickso";
+$adminId3 = "adatta";
+
 include "top.php";
 ?>
 <h2>Batter Chatter</h2>
@@ -77,8 +82,12 @@ print '</article>';
 
 
 
-
-$admin = true;
+if($username == $adminId || $username == $adminId2 || $username == $adminId3){
+    $admin = true;
+}else{
+    $admin = false;
+}
+    
 
 
 
@@ -108,6 +117,8 @@ if ($debug) {
 // print out the results
 print "<ol>\n";
 
+if ($admin)
+{    
 foreach ($post as $onePost) {
 
     print "<li>";
@@ -117,6 +128,8 @@ foreach ($post as $onePost) {
         
     }
     print $onePost['fldTitle'] . " " . $onePost['fldPost']  ."</li>\n";
+}
+
 }
 print "</ol>\n";
 print "</article>";

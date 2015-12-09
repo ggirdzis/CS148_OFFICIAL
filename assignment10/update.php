@@ -113,13 +113,25 @@ if (isset($_POST["btnSubmit"])) {
     if ($title == "") {
         $errorMsg[] = "Please enter your title.";
         $titleERROR = true;
+    }elseif (!verifyAlphaNum($title)) {
+        $errorMsg[] = "Your title appears to contain a special character.";
+        $titleERROR = true;
     }
 
     if ($post == "") {
         $errorMsg[] = "Please enter your post.";
         $postERROR = true;
+    }elseif (!verifyAlphaNum($post)) {
+        $errorMsg[] = "Your post appears to contain a special character.";
+        $postERROR = true;
     }
 
+    
+    
+    
+
+
+ 
     // should check to make sure its the correct date format
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //
